@@ -13,7 +13,7 @@ As mods can't modify the source code directly, we add to it:
 
 > Override XComGameState_MissionSite.InitMissionDifficulty(). From there, we bypass XComGameState_Investigation.CalcStageDifficultyValue() with our own function.
 
-If there's a bug with this mod, you can post to reddit (e.g., xcom2mods) or email me at geoff.hom@gmail.com. Please include the Combat and/or Launch logs. 
+If there's a bug with this mod, you can post to reddit (e.g., xcom2mods) or email me at geoff.hom@gmail.com. Please include relevant logs. 
 
 > Tip: You can see the bug clearly via the Balance log of a new campaign. For the first mission, it'll show like:
 
@@ -36,4 +36,5 @@ If the mod is working, then on Day 1, the Stage should be 2, not 3.
 
 ## Requirements
 
-The mod overrides XComGameState_MissionSite.InitMissionDifficulty(). In that function, this mod bypasses XComGameState_Investigation.CalcStageDifficultyValue().
+The mod overrides XComGameState_MissionSite.InitMissionDifficulty(). 
+In that function, this mod bypasses XComGameState_Investigation.CalcStageDifficultyValue().

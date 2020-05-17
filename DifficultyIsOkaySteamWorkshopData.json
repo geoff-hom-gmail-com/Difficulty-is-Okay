@@ -1,7 +1,48 @@
 {
   "publishingID": 2099690143,
   "Title": "Difficulty is Okay",
-  "Description": "\r\n  This is the README for the XCOM: Chimera Squad mod 'Difficulty is Okay.' \r\n\r\n  This mod fixes a minor bug which makes mission difficulty harder between the 1st and 2nd Operations of Act 1. \r\n  \r\n  ## Background\r\n  \r\n  One thing that affects mission difficulty is the 'stage.' Each Act/faction has 5 stages: Groundwork, each Operation, and Takedown. \r\n  \r\n  Mission difficulty--Easy/Medium/Difficult/Very Difficult--is set in XComTacticalMissionManager.CalculateAlertLevelFromDifficultyParams(). \r\n  That function gets the stage number via XComGameState_Investigation.CalcStageDifficultyValue(). The latter function has a bug, where the value may be +1.\r\n  \r\n  As mods can't modify the source code directly, we add to it:\r\n  \r\n  > Override XComGameState_MissionSite.InitMissionDifficulty(). From there, we bypass XComGameState_Investigation.CalcStageDifficultyValue() with our own function.\r\n  \r\n  If there's a bug with this mod, you can post to reddit (e.g., xcom2mods) or email me at geoff.hom@gmail.com. Please include the Combat and/or Launch logs. \r\n  \r\n  > Tip: You can see the bug clearly via the Balance log of a new campaign. For the first mission, it'll show like:\r\n  \r\n  [3047.73] XCom_Maps: ******************** Building Encounters ********************\r\n  [3047.73] XCom_Maps: \t\tDay: [0]\r\n  [3047.73] XCom_Maps: \t\tDifficulty Params: Act:[1] Stage:[1] District:[0]\r\n  \r\n  then for the 2nd mission(s):\r\n  \r\n  [13166.06] XCom_Maps: \t\tDay: [1]\r\n  [13166.06] XCom_Maps: \t\tDifficulty Params: Act:[1] Stage:[3] District:[0]\r\n  \r\n  If the mod is working, then on Day 1, the Stage should be 2, not 3.\r\n    \r\n  > Tip: This mod prints to the Balance log so you know it's working. Search for 'Difficulty is Okay.'\r\n  \r\n  > Tip: Missions that have already been created won't be fixed. You have to have the mod working the day before.\r\n  \r\n  > Tip: Mod code is at https://github.com/geoffhom/Difficulty-is-Okay.\r\n  \r\n  ## Requirements\r\n  \r\n  The mod overrides XComGameState_MissionSite.InitMissionDifficulty(). In that function, this mod bypasses XComGameState_Investigation.CalcStageDifficultyValue().\r\n  ",
+  "Description": "
+  This is the README for the XCOM: Chimera Squad mod 'Difficulty is Okay.' 
+
+This mod fixes a minor bug which makes mission difficulty harder between the 1st and 2nd Operations of Act 1. 
+
+## Background
+
+One thing that affects mission difficulty is the 'stage.' Each Act/faction has 5 stages: Groundwork, each Operation, and Takedown. 
+
+Mission difficulty--Easy/Medium/Difficult/Very Difficult--is set in XComTacticalMissionManager.CalculateAlertLevelFromDifficultyParams(). 
+That function gets the stage number via XComGameState_Investigation.CalcStageDifficultyValue(). The latter function has a bug, where the value may be +1.
+
+As mods can't modify the source code directly, we add to it:
+
+> Override XComGameState_MissionSite.InitMissionDifficulty(). From there, we bypass XComGameState_Investigation.CalcStageDifficultyValue() with our own function.
+
+If there's a bug with this mod, you can post to reddit (e.g., xcom2mods) or email me at geoff.hom@gmail.com. Please include relevant logs. 
+
+> Tip: You can see the bug clearly via the Balance log of a new campaign. For the first mission, it'll show like:
+
+[3047.73] XCom_Maps: ******************** Building Encounters ********************
+[3047.73] XCom_Maps: 		Day: [0]
+[3047.73] XCom_Maps: 		Difficulty Params: Act:[1] Stage:[1] District:[0]
+
+then for the 2nd mission(s):
+
+[13166.06] XCom_Maps: 		Day: [1]
+[13166.06] XCom_Maps: 		Difficulty Params: Act:[1] Stage:[3] District:[0]
+
+If the mod is working, then on Day 1, the Stage should be 2, not 3.
+  
+> Tip: This mod prints to the Balance log so you know it's working. Search for 'Difficulty is Okay.'
+
+> Tip: Missions that have already been created won't be fixed. You have to have the mod working the day before.
+
+> Tip: Mod code is at https://github.com/geoffhom/Difficulty-is-Okay.
+
+## Requirements
+
+The mod overrides XComGameState_MissionSite.InitMissionDifficulty(). 
+In that function, this mod bypasses XComGameState_Investigation.CalcStageDifficultyValue().
+",
   "Tags": [
     "Bugfix",
     "Balance"
