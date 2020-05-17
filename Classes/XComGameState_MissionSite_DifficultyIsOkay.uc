@@ -21,7 +21,7 @@ simulated function InitMissionDifficulty()
 	local XComGameState_InvestigationOperation CurrentOperation;
 	local bool bOperationMission;
 
-	`log("           XComGameState_MissionSite_DifficultyIsOkay () called.", , 'XCom_Maps');
+	`log("           XComGameState_MissionSite_DifficultyIsOkay.InitMissionDifficulty() called.", , 'XCom_Maps');
 
 	// Early out: data mismatch
 	if (GeneratedMission.MissionID != ObjectID)
