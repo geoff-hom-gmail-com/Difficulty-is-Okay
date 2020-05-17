@@ -74,7 +74,7 @@ static event OnExitPostMissionSequence()
 /// </summary>
 static event OnPostTemplatesCreated()
 {
-
+	`log("           -----------The mod 'Difficulty is Okay' is running! OnPostTemplatesCreated()---------", , 'XCom_Maps');
 }
 
 /// <summary>
